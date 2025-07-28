@@ -1,11 +1,15 @@
-import com.sun.tools.javac.Main
+//import com.sun.tools.javac.Main
 
 
 plugins {
     id 'java-library'
     id "io.freefair.lombok" version "8.6"
 }
-
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
